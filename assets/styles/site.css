@@ -459,6 +459,86 @@ h4 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.services-grid--pillars {
+  gap: 4.5rem 1.4rem;
+  padding-top: 1.8rem;
+}
+
+.pillar-card {
+  position: relative;
+  padding: 4.8rem 1.75rem 1.85rem;
+  overflow: visible;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0)),
+    rgba(13, 21, 31, 0.92);
+}
+
+.pillar-card__icon-shell {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  width: 118px;
+  height: 118px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(0, 237, 237, 0.2), transparent 40%),
+    linear-gradient(180deg, #13243a 0%, #091018 100%);
+  border: 1px solid rgba(0, 237, 237, 0.22);
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.pillar-card__icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter:
+    brightness(0) saturate(100%) invert(89%) sepia(49%) saturate(3068%) hue-rotate(129deg) brightness(106%) contrast(102%)
+    drop-shadow(0 6px 18px rgba(0, 0, 0, 0.18));
+}
+
+.pillar-card__tag {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1rem;
+  background: transparent;
+  color: var(--accent-secondary-soft);
+  border: 1px solid rgba(215, 124, 252, 0.18);
+}
+
+.pillar-card h3,
+.pillar-card h4,
+.pillar-card h5,
+.pillar-card p {
+  text-align: center;
+}
+
+.pillar-card h3 {
+  max-width: 14ch;
+  margin: 0 auto;
+}
+
+.pillar-card p {
+  max-width: 34ch;
+  margin: 0.9rem auto 0;
+}
+
+.pillar-card__divider {
+  display: block;
+  width: 72px;
+  height: 2px;
+  margin: 1rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--accent-strong), transparent);
+}
+
+.pillar-card .detail-list {
+  margin-top: 1.25rem;
+}
+
 .service-card p + .detail-list,
 .testimonial-card p + p,
 .contact-card p + p {
@@ -702,6 +782,10 @@ h4 {
   .site-header__inner {
     min-height: 92px;
   }
+
+  .services-grid--pillars {
+    gap: 4rem;
+  }
 }
 
 @media (max-width: 760px) {
@@ -761,5 +845,19 @@ h4 {
   .hero__actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .pillar-card {
+    padding-top: 4.45rem;
+  }
+
+  .pillar-card__icon-shell {
+    width: 104px;
+    height: 104px;
+  }
+
+  .pillar-card__icon {
+    width: 50px;
+    height: 50px;
   }
 }
