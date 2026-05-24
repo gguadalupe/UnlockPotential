@@ -22,7 +22,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../../external/fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2") format("woff2");
+  src: url("/assets/fonts/jost-v20-latin.woff2") format("woff2");
 }
 
 @font-face {
@@ -30,7 +30,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("../../external/fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2") format("woff2");
+  src: url("/assets/fonts/jost-v20-latin.woff2") format("woff2");
 }
 
 @font-face {
@@ -38,7 +38,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("../../external/fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2") format("woff2");
+  src: url("/assets/fonts/jost-v20-latin.woff2") format("woff2");
 }
 
 * {
@@ -522,6 +522,15 @@ h4 {
   margin: 0 auto;
 }
 
+.pillar-card h5 {
+  max-width: 30ch;
+  margin: 0.85rem auto 0;
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
 .pillar-card p {
   max-width: 34ch;
   margin: 0.9rem auto 0;
@@ -563,8 +572,16 @@ h4 {
   aspect-ratio: 4 / 5;
 }
 
+.story-image--right {
+  object-position: center;
+}
+
 .wide-image {
   aspect-ratio: 16 / 10;
+}
+
+.wide-image--left {
+  object-position: left center;
 }
 
 .testimonial-grid {
@@ -586,6 +603,18 @@ h4 {
 
 .process-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.process-grid--reach {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.process-grid--reach .process-card {
+  padding: 1.25rem;
+}
+
+.process-grid--reach .process-card h3 {
+  font-size: 1.25rem;
 }
 
 .process-card__number {
@@ -672,6 +701,21 @@ h4 {
   color: var(--text);
   padding: 0.95rem 1rem;
   font: inherit;
+}
+
+.field select {
+  color-scheme: dark;
+}
+
+.field select option {
+  background: var(--bg-elevated);
+  color: var(--text);
+}
+
+.field select option:checked,
+.field select option:hover {
+  background: var(--accent);
+  color: #07161c;
 }
 
 .field input:focus,
@@ -786,6 +830,11 @@ h4 {
   .services-grid--pillars {
     gap: 4rem;
   }
+
+  .process-grid--reach {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
 }
 
 @media (max-width: 760px) {
@@ -835,6 +884,11 @@ h4 {
   .metric-card {
     grid-template-columns: 1fr;
     gap: 0.45rem;
+  }
+
+  .process-grid--reach {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .section {
