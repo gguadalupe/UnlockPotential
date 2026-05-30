@@ -35,6 +35,35 @@ function markCurrentNav() {
   });
 }
 
+function updateLanguageLinks() {
+  const path = window.location.pathname;
+  const isSpanish = /\/es\//.test(path);
+  const fileName = path.split("/").pop() || "index.html";
+  const pageFile = fileName || "index.html";
+
+  document.querySelectorAll("[data-lang-link]").forEach((link) => {
+    const targetLanguage = link.dataset.langLink;
+
+    if (targetLanguage === "es") {
+      link.href = isSpanish ? `./${pageFile}` : `./es/${pageFile}`;
+      if (isSpanish) {
+        link.setAttribute("aria-current", "true");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    }
+
+    if (targetLanguage === "en") {
+      link.href = isSpanish ? `../${pageFile}` : `./${pageFile}`;
+      if (isSpanish) {
+        link.removeAttribute("aria-current");
+      } else {
+        link.setAttribute("aria-current", "true");
+      }
+    }
+  });
+}
+
 async function loadPartials() {
   const includes = document.querySelectorAll("[data-include]");
 
@@ -63,6 +92,7 @@ async function initSite() {
   }
 
   markCurrentNav();
+  updateLanguageLinks();
   initNav();
   updateYear();
 }

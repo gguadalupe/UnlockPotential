@@ -161,6 +161,27 @@ h4 {
   background: rgba(0, 237, 237, 0.08);
 }
 
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 0.35rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.language-switch a {
+  padding: 0.55rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.language-switch a[aria-current="true"] {
+  color: #07161c;
+  background: var(--accent-strong);
+}
+
 .nav-toggle {
   display: none;
   border: 0;
@@ -949,6 +970,13 @@ h4 {
 
   .site-nav a {
     border-radius: 14px;
+  }
+
+  .language-switch {
+    margin-left: 0;
+    padding: 0.55rem 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .hero {
